@@ -14,6 +14,7 @@ require (
 	github.com/grpc-ecosystem/go-grpc-middleware v1.0.0
 	github.com/grpc-ecosystem/grpc-gateway v1.9.0
 	github.com/kr/pty v1.1.4 // indirect
+	github.com/nu7hatch/gouuid v0.0.0-20131221200532-179d4d0c4d8d
 	github.com/pkg/errors v0.8.1 // indirect
 	github.com/rogpeppe/fastuuid v1.1.0 // indirect
 	github.com/sirupsen/logrus v1.4.2 // indirect

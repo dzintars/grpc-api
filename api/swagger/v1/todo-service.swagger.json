@@ -2,9 +2,9 @@
   "swagger": "2.0",
   "info": {
     "title": "ToDo service",
-    "version": "1.0",
+    "version": "0.0.1",
     "contact": {
-      "name": "go-grpc-http-rest-microservice-tutorial project",
+      "name": "grpc-api project",
       "url": "https://github.com/dzintars/grpc-api",
       "email": "dzintars.klavins@gmail.com"
     }

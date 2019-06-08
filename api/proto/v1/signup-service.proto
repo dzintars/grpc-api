@@ -1,0 +1,67 @@
+
+syntax = "proto3";
+package v1;
+
+// import "google/protobuf/timestamp.proto";
+import "google/api/annotations.proto";
+import "protoc-gen-swagger/options/annotations.proto";
+
+option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
+	info: {
+		title: "Signup service";
+		version: "0.0.1";
+		contact: {
+			name: "grpc-api project";
+			url: "https://github.com/dzintars/grpc-api";
+			email: "dzintars.klavins@gmail.com";
+        };
+    };
+    schemes: HTTP;
+    consumes: "application/json";
+    produces: "application/json";
+    responses: {
+		key: "404";
+		value: {
+			description: "Returned when the resource does not exist.";
+			schema: {
+				json_schema: {
+					type: STRING;
+				}
+			}
+		}
+	}
+};
+
+// Request data to create new todo task
+message CreateSignupRequest{
+    // API versioning: it is my best practice to specify version explicitly
+    string api = 1;
+
+    // Task entity to add
+    string display_name = 2;
+
+    string email = 3;
+
+    string password = 4;
+}
+
+// Contains data of created todo task
+message CreateSignupResponse{
+    // API versioning: it is my best practice to specify version explicitly
+    string api = 1;
+
+    // UUID of created signup
+    bytes uuid = 2;
+}
+
+
+// Service to manage list of todo tasks
+service SignupCmdService {
+    // Create new todo task
+    rpc Create(CreateSignupRequest) returns (CreateSignupResponse){
+        option (google.api.http) = {
+            post: "/v1/signup"
+            body: "*"
+        };
+    }
+}
